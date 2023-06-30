@@ -8,5 +8,5 @@ COPY package.json pnpm-lock.yaml ./
 RUN pnpm install --frozen-lockfile
 
 COPY . .
-EXPOSE 5173
+EXPOSE 8000
 CMD ["pnpm", "run", "dev", "--host"]
