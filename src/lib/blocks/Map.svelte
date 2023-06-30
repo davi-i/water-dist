@@ -12,7 +12,7 @@
 		const map = new Map({
 			container: 'map',
 			style: 'mapbox://styles/mapbox/streets-v11',
-			center: [lat, long],
+			center: [long, lat],
 			zoom
 		});
 	});
