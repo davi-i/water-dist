@@ -5,4 +5,4 @@
 	export let data: PageData;
 </script>
 
-<Map mapbox_key={data.mapbox_key} />
+<Map mapbox_key={data.mapbox_key} lat={-1} long={1} />
