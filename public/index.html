@@ -1,10 +1,12 @@
 <!doctype html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="/app.css" rel="stylesheet">
 </head>
+
 <body>
     <div class="navbar bg-cyan-950 text-neutral-content">
         <a class="btn btn-ghost normal-case text-xl">Smart Water Distribution</a>
@@ -59,5 +61,23 @@
         </footer>
     </div>
 
+  <div id="sensor1">
+    <p>Medição: <span id="sensor1-Medicao"></span></p>
+    <p>Latitude: <span id="sensor1-latitude"></span></p>
+    <p>Longitude: <span id="sensor1-longitude"></span></p>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    const socket = io();
+
+    socket.on('sensor1', (data) => {
+      for (let attribute of data.attributes) {
+        console.log(attribute);
+        const value = document.getElementById(`sensor1-${attribute.name}`);
+        value.textContent = attribute.value;
+      }
+    });
+  </script>
 </body>
+
 </html>
