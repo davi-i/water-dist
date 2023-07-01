@@ -16,9 +16,9 @@ app.post('/api/sensorchange', (req, res) => {
   console.log(JSON.stringify(req.body));
   for (const response of req.body.contextResponses) {
     const element = response.contextElement;
-    const capacity = +element.attributes.filter(({ name }) => name == 'capacidade')[0].value;
-    const volume = +element.attributes.filter(({ name }) => name == 'volume')[0].value;
-    const vazao = +element.attributes.filter(({ name }) => name == 'vazao')[0].value;
+    const capacity = +element.attributes.filter(({ name }: any) => name == 'capacidade')[0].value;
+    const volume = +element.attributes.filter(({ name }: any) => name == 'volume')[0].value;
+    const vazao = +element.attributes.filter(({ name }: any) => name == 'vazao')[0].value;
     const percent = volume / capacity;
 
     let situacao: string;

@@ -17,22 +17,25 @@
         <div class="stats stats-vertical lg:stats-horizontal shadow-lg border border-gray-100">
             <div class="stat text-center align-middle justify-center">
                 <div class="stat-title">Localização</div>
-                <div class="stat-value">22, 23</div>
+                <div class="stat-value">
+                    <span id="sensor1-latitude">0</span>, 
+                    <span id="sensor1-longitude">0</span>
+                </div>
                 <div class="stat-desc">Jan 1st - Feb 1st</div>
             </div>
             <div class="stat text-center align-middle justify-center">
                 <div class="stat-title">Volume</div>
-                <div class="stat-value">31</div>
+                <div class="stat-value"><span id="sensor1-volume">0</span></div>
                 <div class="stat-desc">Jan 1st - Feb 1st</div>
             </div>
             <div class="stat text-center align-middle justify-center">
                 <div class="stat-title">Vazão</div>
-                <div class="stat-value">10</div>
+                <div class="stat-value"><span id="sensor1-vazao">0</span></div>
                 <div class="stat-desc">↗ 400 (22%)</div>
             </div>
             <div class="stat text-center align-middle justify-center">
                 <div class="stat-title">Situação</div>
-                <div class="stat-value">1,200</div>
+                <div class="stat-value" id="sensor1-situacao"> - </div>
                 <div class="stat-desc">↘︎ 90 (14%)</div>
             </div>  
         </div>
@@ -43,22 +46,25 @@
         <div class="stats stats-vertical lg:stats-horizontal shadow-lg border border-gray-100">
             <div class="stat text-center align-middle justify-center">
                 <div class="stat-title">Localização</div>
-                <div class="stat-value">22, 23</div>
+                <div class="stat-value">
+                    <span id="sensor2-latitude">0</span>
+                    <span id="sensor2-longitude">0</span>
+                </div>
                 <div class="stat-desc">Jan 1st - Feb 1st</div>
             </div>
             <div class="stat text-center align-middle justify-center">
                 <div class="stat-title">Volume</div>
-                <div class="stat-value">31</div>
+                <div class="stat-value"><span id="sensor2-volume">0</span></div>
                 <div class="stat-desc">Jan 1st - Feb 1st</div>
             </div>
             <div class="stat text-center align-middle justify-center">
                 <div class="stat-title">Vazão</div>
-                <div class="stat-value">10</div>
+                <div class="stat-value"><span id="sensor2-vazao">0</span></div>
                 <div class="stat-desc">↗ 400 (22%)</div>
             </div>
             <div class="stat text-center align-middle justify-center">
                 <div class="stat-title">Situação</div>
-                <div class="stat-value">1,200</div>
+                <div class="stat-value" id="sensor2-situacao"> - </div>
                 <div class="stat-desc">↘︎ 90 (14%)</div>
             </div>  
         </div>
@@ -69,22 +75,25 @@
         <div class="stats stats-vertical lg:stats-horizontal shadow-lg border border-gray-100">
             <div class="stat text-center align-middle justify-center">
                 <div class="stat-title">Localização</div>
-                <div class="stat-value">22, 23</div>
+                <div class="stat-value">
+                    <span id="sensor3-latitude">0</span>
+                    <span id="sensor3-longitude">0</span>
+                </div>
                 <div class="stat-desc">Jan 1st - Feb 1st</div>
             </div>
             <div class="stat text-center align-middle justify-center">
                 <div class="stat-title">Volume</div>
-                <div class="stat-value">31</div>
+                <div class="stat-value"><span id="sensor3-volume">0</span></div>
                 <div class="stat-desc">Jan 1st - Feb 1st</div>
             </div>
             <div class="stat text-center align-middle justify-center">
                 <div class="stat-title">Vazão</div>
-                <div class="stat-value">10</div>
+                <div class="stat-value"><span id="sensor3-vazao">0</span></div>
                 <div class="stat-desc">↗ 400 (22%)</div>
             </div>
             <div class="stat text-center align-middle justify-center">
                 <div class="stat-title">Situação</div>
-                <div class="stat-value">1,200</div>
+                <div class="stat-value" id="sensor3-situacao"> - </div>
                 <div class="stat-desc">↘︎ 90 (14%)</div>
             </div>  
         </div>
@@ -95,38 +104,32 @@
         <div class="stats stats-vertical lg:stats-horizontal shadow-lg border border-gray-100">
             <div class="stat text-center align-middle justify-center">
                 <div class="stat-title">Localização</div>
-                <div class="stat-value">22, 23</div>
+                <div class="stat-value">
+                    <span id="sensor4-latitude">0</span>
+                    <span id="sensor4-longitude">0</span>
+                </div>
                 <div class="stat-desc">Jan 1st - Feb 1st</div>
             </div>
             <div class="stat text-center align-middle justify-center">
                 <div class="stat-title">Volume</div>
-                <div class="stat-value">31</div>
+                <div class="stat-value"><span id="sensor4-volume">0</span></div>
                 <div class="stat-desc">Jan 1st - Feb 1st</div>
             </div>
             <div class="stat text-center align-middle justify-center">
                 <div class="stat-title">Vazão</div>
-                <div class="stat-value">10</div>
+                <div class="stat-value"><span id="sensor4-vazao">0</span></div>
                 <div class="stat-desc">↗ 400 (22%)</div>
             </div>
             <div class="stat text-center align-middle justify-center">
                 <div class="stat-title">Situação</div>
-                <div class="stat-value">1,200</div>
+                <div class="stat-value" id="sensor4-situacao"> - </div>
                 <div class="stat-desc">↘︎ 90 (14%)</div>
             </div>  
         </div>
     </div>
-    
 
-
-    <div id="sensor1">
-        <p>Medição: <span id="sensor1-volume"></span></p>
-        <p>Latitude: <span id="sensor1-vazao"></span></p>
-        <p>Longitude: <span id="sensor1-localizacao"></span></p>
-        <p>Longitude: <span id="sensor1-capacidade"></span></p>
-    </div>
-
-    <div>
-        <footer class="footer footer-center p-4 bg-base-300 text-base-content">
+    <div class="mt-14">
+        <footer class="footer footer-center p-6 bg-base-300 text-base-content">
             <div>
                 <p>Copyright © 2023 - All right reserved by Anny Klarice Fernandes and José Davi Viana</p>
             </div>
@@ -137,10 +140,10 @@
     <script>
         const socket = io();
 
-        socket.on('sensor1', (data) => {
+        socket.on('sensorchange', (data) => {
             for (let attribute of data.attributes) {
                 console.log(attribute);
-                const value = document.getElementById(`sensor1-${attribute.name}`);
+                const value = document.getElementById(`${data.id}-${attribute.name}`);
                 value.textContent = attribute.value;
             }
         });

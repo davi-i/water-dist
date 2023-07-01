@@ -1165,6 +1165,9 @@ html {
 .m-6 {
   margin: 1.5rem;
 }
+.mt-14 {
+  margin-top: 3.5rem;
+}
 .flex {
   display: flex;
 }
@@ -1198,9 +1201,6 @@ html {
 }
 .p-1 {
   padding: 0.25rem;
-}
-.p-4 {
-  padding: 1rem;
 }
 .p-6 {
   padding: 1.5rem;
