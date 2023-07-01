@@ -12,13 +12,13 @@
         <a class="btn btn-ghost normal-case text-xl">Smart Water Distribution</a>
     </div>
 
-    <div class="flex flex-col m-6 p-6 bg-white rounded-lg">  
+    <div class="flex flex-col m-6 p-6 bg-white rounded-lg">
         <div class="collapse-title text-3xl font-medium flex text-center align-middle justify-center p-1">Neópolis</div>
         <div class="stats stats-vertical lg:stats-horizontal shadow-lg border border-gray-100">
             <div class="stat text-center align-middle justify-center">
                 <div class="stat-title">Localização</div>
                 <div class="stat-value">
-                    <span id="sensor1-latitude">0</span>, 
+                    <span id="sensor1-latitude">0</span>,
                     <span id="sensor1-longitude">0</span>
                 </div>
                 <div class="stat-desc">Jan 1st - Feb 1st</div>
@@ -37,12 +37,13 @@
                 <div class="stat-title">Situação</div>
                 <div class="stat-value" id="sensor1-situacao"> - </div>
                 <div class="stat-desc">↘︎ 90 (14%)</div>
-            </div>  
+            </div>
         </div>
     </div>
 
-    <div class="flex flex-col m-6 p-6 bg-white rounded-lg">  
-        <div class="collapse-title text-3xl font-medium flex text-center align-middle justify-center p-1">Ponta Negra</div>
+    <div class="flex flex-col m-6 p-6 bg-white rounded-lg">
+        <div class="collapse-title text-3xl font-medium flex text-center align-middle justify-center p-1">Ponta Negra
+        </div>
         <div class="stats stats-vertical lg:stats-horizontal shadow-lg border border-gray-100">
             <div class="stat text-center align-middle justify-center">
                 <div class="stat-title">Localização</div>
@@ -66,12 +67,13 @@
                 <div class="stat-title">Situação</div>
                 <div class="stat-value" id="sensor2-situacao"> - </div>
                 <div class="stat-desc">↘︎ 90 (14%)</div>
-            </div>  
+            </div>
         </div>
     </div>
 
-    <div class="flex flex-col m-6 p-6 bg-white rounded-lg">  
-        <div class="collapse-title text-3xl font-medium flex text-center align-middle justify-center p-1">Capim Macio</div>
+    <div class="flex flex-col m-6 p-6 bg-white rounded-lg">
+        <div class="collapse-title text-3xl font-medium flex text-center align-middle justify-center p-1">Capim Macio
+        </div>
         <div class="stats stats-vertical lg:stats-horizontal shadow-lg border border-gray-100">
             <div class="stat text-center align-middle justify-center">
                 <div class="stat-title">Localização</div>
@@ -95,12 +97,13 @@
                 <div class="stat-title">Situação</div>
                 <div class="stat-value" id="sensor3-situacao"> - </div>
                 <div class="stat-desc">↘︎ 90 (14%)</div>
-            </div>  
+            </div>
         </div>
     </div>
 
-    <div class="flex flex-col m-6 p-6 bg-white rounded-lg">  
-        <div class="collapse-title text-3xl font-medium flex text-center align-middle justify-center p-1">Lagoa Nova</div>
+    <div class="flex flex-col m-6 p-6 bg-white rounded-lg">
+        <div class="collapse-title text-3xl font-medium flex text-center align-middle justify-center p-1">Lagoa Nova
+        </div>
         <div class="stats stats-vertical lg:stats-horizontal shadow-lg border border-gray-100">
             <div class="stat text-center align-middle justify-center">
                 <div class="stat-title">Localização</div>
@@ -124,7 +127,7 @@
                 <div class="stat-title">Situação</div>
                 <div class="stat-value" id="sensor4-situacao"> - </div>
                 <div class="stat-desc">↘︎ 90 (14%)</div>
-            </div>  
+            </div>
         </div>
     </div>
 
@@ -143,8 +146,11 @@
         socket.on('sensorchange', (data) => {
             for (let attribute of data.attributes) {
                 console.log(attribute);
+
                 const value = document.getElementById(`${data.id}-${attribute.name}`);
-                value.textContent = attribute.value;
+                if (value) {
+                    value.textContent = attribute.value;
+                }
             }
         });
     </script>
