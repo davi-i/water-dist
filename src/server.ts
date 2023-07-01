@@ -16,7 +16,7 @@ app.post('/api/sensorchange', (req, res) => {
   console.log(JSON.stringify(req.body));
   for (const response of req.body.contextResponses) {
     const element = response.contextElement;
-    io.emit(element.id, element);
+    io.emit('sensorchange', element);
   }
   res.status(200);
 });
