@@ -21,15 +21,18 @@ app.post('/api/sensorchange', (req, res) => {
     const vazao = +element.attributes.filter(({ name }) => name == 'vazao')[0].value;
     const percent = volume / capacity;
 
+    let situacao: string;
     if (percent > 30) {
-      element.situacao = 'Estável';
+      situacao = 'Estável';
     } else if (percent > 0) {
-      element.situacao = 'Crítica';
+      situacao = 'Crítica';
       io.emit('critical');
     } else {
-      element.situacao = 'Totalmente vazio';
+      situacao = 'Totalmente vazio';
       io.emit('empty');
     }
+
+    element.attributes.push({ name: 'situacao', value: situacao });
 
     if (vazao >= 0.1 * capacity) {
       io.emit('leaking');
