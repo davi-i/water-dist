@@ -12,7 +12,11 @@ const server = app.listen(port, () => {
 
 const io = new Server(server);
 
-app.post('/api/sensor1', (req, res) => {
-  io.emit('sensor1', req.body.contextResponses[0].contextElement);
+app.post('/api/sensorchange', (req, res) => {
+  console.log(JSON.stringify(req.body));
+  for (const response of req.body.contextResponses) {
+    const element = response.contextElement;
+    io.emit(element.id, element);
+  }
   res.status(200);
 });
