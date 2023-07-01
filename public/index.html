@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html data-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -8,127 +8,14 @@
 </head>
 
 <body>
+    <div id="toast-container" class="fixed top-5 inset-x-0 flex flex-col items-center space-y-4"></div>
+
+    </div>
     <div class="navbar bg-cyan-950 text-neutral-content shadow-md">
         <a class="btn btn-ghost normal-case text-xl">Smart Water Distribution</a>
     </div>
 
-    <div class="flex flex-col m-6 p-6 bg-white rounded-lg">
-        <div class="collapse-title text-3xl font-medium flex text-center align-middle justify-center p-1">Neópolis</div>
-        <div class="stats stats-vertical lg:stats-horizontal shadow-lg border border-gray-100">
-            <div class="stat text-center align-middle justify-center">
-                <div class="stat-title">Localização</div>
-                <div class="stat-value">
-                    <span id="sensor1-latitude">0</span>,
-                    <span id="sensor1-longitude">0</span>
-                </div>
-                <div class="stat-desc">Jan 1st - Feb 1st</div>
-            </div>
-            <div class="stat text-center align-middle justify-center">
-                <div class="stat-title">Volume</div>
-                <div class="stat-value"><span id="sensor1-volume">0</span></div>
-                <div class="stat-desc">Jan 1st - Feb 1st</div>
-            </div>
-            <div class="stat text-center align-middle justify-center">
-                <div class="stat-title">Vazão</div>
-                <div class="stat-value"><span id="sensor1-vazao">0</span></div>
-                <div class="stat-desc">↗ 400 (22%)</div>
-            </div>
-            <div class="stat text-center align-middle justify-center">
-                <div class="stat-title">Situação</div>
-                <div class="stat-value" id="sensor1-situacao"> - </div>
-                <div class="stat-desc">↘︎ 90 (14%)</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="flex flex-col m-6 p-6 bg-white rounded-lg">
-        <div class="collapse-title text-3xl font-medium flex text-center align-middle justify-center p-1">Ponta Negra
-        </div>
-        <div class="stats stats-vertical lg:stats-horizontal shadow-lg border border-gray-100">
-            <div class="stat text-center align-middle justify-center">
-                <div class="stat-title">Localização</div>
-                <div class="stat-value">
-                    <span id="sensor2-latitude">0</span>,
-                    <span id="sensor2-longitude">0</span>
-                </div>
-                <div class="stat-desc">Jan 1st - Feb 1st</div>
-            </div>
-            <div class="stat text-center align-middle justify-center">
-                <div class="stat-title">Volume</div>
-                <div class="stat-value"><span id="sensor2-volume">0</span></div>
-                <div class="stat-desc">Jan 1st - Feb 1st</div>
-            </div>
-            <div class="stat text-center align-middle justify-center">
-                <div class="stat-title">Vazão</div>
-                <div class="stat-value"><span id="sensor2-vazao">0</span></div>
-                <div class="stat-desc">↗ 400 (22%)</div>
-            </div>
-            <div class="stat text-center align-middle justify-center">
-                <div class="stat-title">Situação</div>
-                <div class="stat-value" id="sensor2-situacao"> - </div>
-                <div class="stat-desc">↘︎ 90 (14%)</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="flex flex-col m-6 p-6 bg-white rounded-lg">
-        <div class="collapse-title text-3xl font-medium flex text-center align-middle justify-center p-1">Capim Macio
-        </div>
-        <div class="stats stats-vertical lg:stats-horizontal shadow-lg border border-gray-100">
-            <div class="stat text-center align-middle justify-center">
-                <div class="stat-title">Localização</div>
-                <div class="stat-value">
-                    <span id="sensor3-latitude">0</span>,
-                    <span id="sensor3-longitude">0</span>
-                </div>
-                <div class="stat-desc">Jan 1st - Feb 1st</div>
-            </div>
-            <div class="stat text-center align-middle justify-center">
-                <div class="stat-title">Volume</div>
-                <div class="stat-value"><span id="sensor3-volume">0</span></div>
-                <div class="stat-desc">Jan 1st - Feb 1st</div>
-            </div>
-            <div class="stat text-center align-middle justify-center">
-                <div class="stat-title">Vazão</div>
-                <div class="stat-value"><span id="sensor3-vazao">0</span></div>
-                <div class="stat-desc">↗ 400 (22%)</div>
-            </div>
-            <div class="stat text-center align-middle justify-center">
-                <div class="stat-title">Situação</div>
-                <div class="stat-value" id="sensor3-situacao"> - </div>
-                <div class="stat-desc">↘︎ 90 (14%)</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="flex flex-col m-6 p-6 bg-white rounded-lg">
-        <div class="collapse-title text-3xl font-medium flex text-center align-middle justify-center p-1">Lagoa Nova
-        </div>
-        <div class="stats stats-vertical lg:stats-horizontal shadow-lg border border-gray-100">
-            <div class="stat text-center align-middle justify-center">
-                <div class="stat-title">Localização</div>
-                <div class="stat-value">
-                    <span id="sensor4-latitude">0</span>,
-                    <span id="sensor4-longitude">0</span>
-                </div>
-                <div class="stat-desc">Jan 1st - Feb 1st</div>
-            </div>
-            <div class="stat text-center align-middle justify-center">
-                <div class="stat-title">Volume</div>
-                <div class="stat-value"><span id="sensor4-volume">0</span></div>
-                <div class="stat-desc">Jan 1st - Feb 1st</div>
-            </div>
-            <div class="stat text-center align-middle justify-center">
-                <div class="stat-title">Vazão</div>
-                <div class="stat-value"><span id="sensor4-vazao">0</span></div>
-                <div class="stat-desc">↗ 400 (22%)</div>
-            </div>
-            <div class="stat text-center align-middle justify-center">
-                <div class="stat-title">Situação</div>
-                <div class="stat-value" id="sensor4-situacao"> - </div>
-                <div class="stat-desc">↘︎ 90 (14%)</div>
-            </div>
-        </div>
+    <div id="dados">
     </div>
 
     <div class="mt-14">
@@ -143,15 +30,99 @@
     <script>
         const socket = io();
 
-        socket.on('sensorchange', (data) => {
-            for (let attribute of data.attributes) {
-                console.log(attribute);
+        function showToast(message) {
+            var toastContainer = document.getElementById("toast-container");
 
-                const value = document.getElementById(`${data.id}-${attribute.name}`);
-                if (value) {
-                    value.textContent = attribute.value;
+            // Create a new toast element
+            var toast = document.createElement("div");
+            toast.classList.add("bg-red-500", "text-white", "rounded-lg", "shadow-lg", "px-6", "py-4", "text-xl");
+            toast.textContent = message;
+
+            // Append the new toast to the container
+            toastContainer.appendChild(toast);
+
+            // Automatically remove the toast after 7 seconds
+            setTimeout(function () {
+                toast.remove();
+            }, 7000);
+        }
+
+        socket.on('sensorchange', (data) => {
+            console.log(data.attributes);
+            let div = document.getElementById(data.id);
+            if (!div) {
+                div = document.createElement('div');
+                div.setAttribute('id', data.id);
+                div.classList.add("flex", "flex-col", "m-6", "p-6", "bg-white", "rounded-lg");
+                const title = document.createElement('div');
+                title.classList.add("collapse-title", "text-3xl", "font-medium", "flex", "text-center", "align-middle", "justify-center", "p-1");
+                title.textContent = data.attributes.bairro;
+                div.appendChild(title);
+
+                const content = document.createElement('div');
+                content.classList.add("stats", "stats-vertical", "lg:stats-horizontal", "shadow-lg", "border", "border-gray-100");
+
+                const createSection = (title, extraTxt, dados = []) => {
+                    const section = document.createElement('div');
+                    section.classList.add("stat", "text-center", "align-middle", "justify-center");
+                    const sectionTitle = document.createElement('div');
+                    sectionTitle.classList.add("stat-title");
+                    sectionTitle.textContent = title;
+                    section.appendChild(sectionTitle);
+
+                    const sectionDados = document.createElement('div');
+                    sectionDados.classList.add("stat-value");
+                    for (const dado of dados) {
+                        sectionDados.appendChild(dado);
+                    }
+                    section.appendChild(sectionDados);
+
+                    const sectionExtra = document.createElement('div');
+                    sectionExtra.classList.add("stat-desc");
+                    sectionExtra.textContent = extraTxt;
+                    section.appendChild(sectionExtra);
+                    content.appendChild(section);
+                }
+
+                const latitude = document.createElement('div');
+                latitude.setAttribute('id', data.id + "-latitude");
+                const longitude = document.createElement('div');
+                longitude.setAttribute('id', data.id + "-longitude");
+                createSection('Localização', 'Jan 1st - Feb 1st', [latitude, longitude]);
+
+                const volumeDado = document.createElement('span');
+                volumeDado.setAttribute('id', data.id + "-volume");
+                createSection('Volume', 'Jan 1st - Feb 1st', [volumeDado]);
+
+                const vazaoDado = document.createElement('span');
+                vazaoDado.setAttribute('id', data.id + "-vazao");
+                createSection('Vazão', '↗ 400 (22%)', [vazaoDado]);
+
+                const situacaoDado = document.createElement('span');
+                situacaoDado.setAttribute('id', data.id + "-situacao");
+                createSection('Situação', '↘︎ 90 (14%)', [situacaoDado]);
+
+                div.appendChild(content);
+                document.getElementById('dados').appendChild(div);
+            }
+            for (let [name, value] of Object.entries(data.attributes)) {
+                const valueElement = document.getElementById(`${data.id}-${name}`);
+                if (valueElement) {
+                    valueElement.textContent = value;
                 }
             }
+        });
+
+        socket.on('critical', (data) => {
+            showToast(`Atenção: volume da distribuidora do bairro ${data.attributes.bairro} está em nível crítico: ${data.attributes.volume}m³`);
+        });
+
+        socket.on('empty', (data) => {
+            showToast(`Atenção: volume da distribuidora do bairro ${data.attributes.bairro} está vazia`);
+        });
+
+        socket.on('leaking', (data) => {
+            showToast(`Atenção: a vazão da distribuidora do bairro ${data.attributes.bairro} está muito alta (${data.attributes.vazao}m³/s), é provável que haja um vazamento.`);
         });
     </script>
 </body>

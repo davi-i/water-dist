@@ -16,28 +16,41 @@ app.post('/api/sensorchange', (req, res) => {
   console.log(JSON.stringify(req.body));
   for (const response of req.body.contextResponses) {
     const element = response.contextElement;
-    const capacity = +element.attributes.filter(({ name }: any) => name == 'capacidade')[0].value;
+    const capacidade = +element.attributes.filter(({ name }: any) => name == 'capacidade')[0].value;
     const volume = +element.attributes.filter(({ name }: any) => name == 'volume')[0].value;
     const vazao = +element.attributes.filter(({ name }: any) => name == 'vazao')[0].value;
-    const percent = volume / capacity;
+    const latitude = +element.attributes.filter(({ name }: any) => name == 'latitude')[0].value;
+    const longitude = +element.attributes.filter(({ name }: any) => name == 'longitude')[0].value;
+    const bairro = element.attributes.filter(({ name }: any) => name == 'bairro')[0].value;
+    const percent = volume / capacidade;
 
-    let situacao: string;
-    if (percent > 30) {
-      situacao = 'Estável';
+    let dados = {
+      id: element.id,
+      attributes: {
+        capacidade,
+        volume,
+        vazao,
+        latitude,
+        longitude,
+        bairro,
+        situacao: '',
+      }
+    };
+
+    if (percent > 0.3) {
+      dados.attributes.situacao = 'Estável';
     } else if (percent > 0) {
-      situacao = 'Crítica';
-      io.emit('critical');
+      dados.attributes.situacao = 'Crítica';
+      io.emit('critical', dados);
     } else {
-      situacao = 'Totalmente vazio';
-      io.emit('empty');
+      dados.attributes.situacao = 'Totalmente vazio';
+      io.emit('empty', dados);
     }
 
-    element.attributes.push({ name: 'situacao', value: situacao });
-
-    if (vazao >= 0.1 * capacity) {
-      io.emit('leaking');
+    if (vazao >= 0.1 * capacidade) {
+      io.emit('leaking', dados);
     }
-    io.emit('sensorchange', element);
+    io.emit('sensorchange', dados);
   }
   res.status(200);
 });
