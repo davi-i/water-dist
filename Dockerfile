@@ -9,4 +9,4 @@ RUN pnpm install --frozen-lockfile
 
 COPY . .
 EXPOSE 8000
-CMD ["pnpm", "run", "dev", "--host"]
+CMD ["pnpm", "start"]
