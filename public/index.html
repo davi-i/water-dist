@@ -88,19 +88,19 @@
                 latitude.setAttribute('id', data.id + "-latitude");
                 const longitude = document.createElement('div');
                 longitude.setAttribute('id', data.id + "-longitude");
-                createSection('Localização', 'Jan 1st - Feb 1st', [latitude, longitude]);
+                createSection('Localização', 'Latitude e longitude', [latitude, longitude]);
 
                 const volumeDado = document.createElement('span');
                 volumeDado.setAttribute('id', data.id + "-volume");
-                createSection('Volume', 'Jan 1st - Feb 1st', [volumeDado]);
+                createSection('Volume', 'Em metros cúbicos', [volumeDado]);
 
                 const vazaoDado = document.createElement('span');
                 vazaoDado.setAttribute('id', data.id + "-vazao");
-                createSection('Vazão', '↗ 400 (22%)', [vazaoDado]);
+                createSection('Vazão', 'Em metros cúbicos/sengudo ', [vazaoDado]);
 
                 const situacaoDado = document.createElement('span');
                 situacaoDado.setAttribute('id', data.id + "-situacao");
-                createSection('Situação', '↘︎ 90 (14%)', [situacaoDado]);
+                createSection('Situação', 'Atente-se à situação atual', [situacaoDado]);
 
                 div.appendChild(content);
                 document.getElementById('dados').appendChild(div);
